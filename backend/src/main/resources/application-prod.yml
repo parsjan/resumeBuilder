@@ -1,0 +1,29 @@
+# =============================================================================
+# Production profile  —  activated by SPRING_PROFILES_ACTIVE=prod
+# =============================================================================
+# Flyway is OFF. Run migrations manually before every deployment:
+#
+#   ./mvnw flyway:migrate \
+#     -Dflyway.url=jdbc:postgresql://$DB_HOST:$DB_PORT/$DB_NAME \
+#     -Dflyway.user=$DB_USERNAME \
+#     -Dflyway.password=$DB_PASSWORD \
+#     -Dflyway.locations=classpath:db/migration
+#
+# The app still uses ddl-auto=validate, so it will refuse to start if the
+# schema does not match the entities — a safe guard against missing migrations.
+# =============================================================================
+
+spring:
+  flyway:
+    enabled: false
+
+  jpa:
+    show-sql: false
+
+logging:
+  level:
+    root: WARN
+    com.app: INFO
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN

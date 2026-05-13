@@ -1,0 +1,20 @@
+# =============================================================================
+# Local development profile  —  activated by SPRING_PROFILES_ACTIVE=local
+# =============================================================================
+# Overrides the base application.yml settings that differ in local dev.
+# Flyway auto-migrates on every startup so your local DB always stays in sync.
+# =============================================================================
+
+spring:
+  flyway:
+    enabled: true
+
+  jpa:
+    show-sql: true          # helpful for local debugging
+
+logging:
+  level:
+    root: INFO
+    com.app: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

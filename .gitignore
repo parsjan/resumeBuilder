@@ -28,3 +28,7 @@ docker-compose.override.yml
 
 
 .claude/
+
+
+deploy.zip
+Procfile

@@ -31,8 +31,10 @@ spring:
           time_zone: UTC
 
   # ── Flyway ────────────────────────────────────────────────────────────────
+  # Disabled by default. Enabled automatically on the "local" profile.
+  # In production, run migrations manually before deploying the app.
   flyway:
-    enabled: true
+    enabled: false
     locations: classpath:db/migration
     baseline-on-migrate: false
     validate-on-migrate: true

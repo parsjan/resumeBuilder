@@ -145,11 +145,22 @@ export interface ApiResponse<T> {
   message?: string;
 }
 
+// Matches Spring's Page<T> wrapped in the backend ApiResponse envelope:
+// { success: true, data: { content: T[], totalElements: N, totalPages: N, ... } }
+export interface SpringPage<T> {
+  content: T[];
+  totalElements: number;
+  totalPages: number;
+  size: number;
+  number: number; // 0-indexed current page
+  first: boolean;
+  last: boolean;
+  empty: boolean;
+}
+
 export interface PaginatedResponse<T> {
-  data: T[];
-  total: number;
-  page: number;
-  pageSize: number;
+  success: boolean;
+  data: SpringPage<T>;
 }
 
 export interface ApiError {
