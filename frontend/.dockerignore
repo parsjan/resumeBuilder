@@ -1,0 +1,28 @@
+# Dependencies — reinstalled inside the image
+node_modules
+
+# Next.js build output — produced inside the image
+.next
+
+# Local env files — secrets must be passed as build args or runtime env vars,
+# never baked into the image
+.env
+.env.local
+.env.*.local
+
+# Version control
+.git
+.gitignore
+
+# Editor / OS noise
+.DS_Store
+*.swp
+*.swo
+Thumbs.db
+
+# Docker files themselves (no need to COPY)
+Dockerfile
+.dockerignore
+
+# Docs
+README.md

@@ -1,0 +1,30 @@
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+
+# ── Backend (Maven / Java) ────────────────────────────────────────────────────
+backend/target/
+*.class
+*.jar
+*.war
+
+# ── Frontend (Next.js / Node) ─────────────────────────────────────────────────
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+docker-compose.override.yml
+
+
+.claude/
